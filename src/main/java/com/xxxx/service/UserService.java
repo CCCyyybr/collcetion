@@ -133,7 +133,7 @@ public class UserService {
 
     }
 
-    private User findUserByUserId(Integer userId) {
+    public User findUserByUserId(Integer userId) {
         Optional<User> optionalUser = users.stream()
                 .filter(u -> u.getId().equals(userId))
                 .findFirst();
@@ -147,7 +147,6 @@ public class UserService {
             throw new RuntimeException("待删除记录不存在");
         }
         users.remove(result);
-
     }
 
     /**
