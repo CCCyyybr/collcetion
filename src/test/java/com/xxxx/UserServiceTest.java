@@ -29,12 +29,25 @@ public class UserServiceTest {
 
     @Test
     public void updateUser(){
-
+        System.out.println("记录更新前.........");
+        userService.listUser();
+        userService.updateUser(new User(2,"abc","123456","test","test",""));
+        System.out.println("记录更新后......");
+        userService.listUser();
     }
 
 
     @Test
     public void delUser(){
+        System.out.println("删除记录前.........");
+        userService.listUser();
+        userService.delUser(2);
+        System.out.println("删除记录后.........");
+        userService.listUser();
+    }
 
+    @Test
+    public void testLogin(){
+        userService.login("admin","123456");
     }
 }
